@@ -45,7 +45,7 @@
   <div *ngFor="let empleado of empleados; let i=index;" class="row">
     <div class="col-md-3">[{{i+1}}] {{empleado.nombre}}</div>
     <div class="col-md-3">{{empleado.apellido}}</div>
-    <div class="col-md-3">{{empleado.cargo}}</div>
-    <div class="col-md-3">{{empleado.salario}}</div>
+    <div class="col-md-3" [ngClass]="{estiloDirectora:empleado.cargo=='Directora'}">{{empleado.cargo}}</div>
+    <div class="col-md-3"><span [ngStyle]="{color:empleado.salario>5000?'green':'red'}"> {{empleado.salario}} </span></div>
   </div>
 </div>
